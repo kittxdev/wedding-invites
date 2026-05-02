@@ -1,6 +1,6 @@
 
 import './style.css';
-import { initCanvas } from './modules/canvas.js';
+
 import { initCursor } from './modules/cursor.js';
 import { initMusic } from './modules/music.js';
 import { WEDDING } from './data.js';
@@ -38,8 +38,10 @@ if (sections.footer) renderFooter();
 
 if (sections.countdown) initCountdown();
 
-/* ── background canvas ── */
-initCanvas();
+
+
+/* ── cursor ── */
+initCursor();
 
 /* ── cursor ── */
 initCursor();

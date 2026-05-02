@@ -60,13 +60,7 @@ export function renderHero() {
   text('heroVenue', `${WD.venue.name} · ${WD.venue.city}`);
   text('cdBgText', `${FIRST.name} & ${SECOND.name}`);
 
-  const heights = [60, 80, 50, 100, 70, 90, 55, 85];
-  html('candleRow', heights.map(h => `
-    <div class="candle">
-      <div class="candle-glow" style="width:${h * 0.5}px;height:${h * 0.5}px;margin-bottom:-${h * 0.1}px;"></div>
-      <div class="candle-flame"></div>
-      <div class="candle-body" style="height:${h}px;"></div>
-    </div>`).join(''));
+
 }
 
 /* ── COUNTDOWN ── */
