@@ -79,7 +79,7 @@ export const WEDDING = {
 
   parents: {
     bride: [
-      { name: 'Mr. V. Dharma Raj', qual: 'M.Sc., M.Tech.', desc: 'GAIL India Ltd (VRS), Prop. Vivitha Microns' },
+      { name: 'Mr. V. Dharmaraj', qual: 'M.Sc., M.Tech.', desc: 'GAIL India Ltd (VRS), Prop. Vivitha Microns' },
       { name: 'Mrs. V. Latha', qual: 'M.A., B.Ed., M.Phil.', desc: 'St. Joseph Matric. Hr.Sec.School., Alangulam.' }
     ],
     groom: [
