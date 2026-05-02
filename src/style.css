@@ -430,6 +430,7 @@ body.cursor-ready {
   /* vertically fill remaining viewport so content feels centered on screen */
   min-height: calc(100vh - max(130px, 14vh) - max(80px, 8vh));
   justify-content: center;
+
 }
 
 .hero-gif {
