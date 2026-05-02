@@ -17,6 +17,13 @@ import {
 } from './modules/render.js';
 
 const { sections } = WEDDING;
+Object.entries(sections).forEach(([id, enabled]) => {
+  if (!enabled) {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+  }
+});
+
 
 /* ── render all content from data ── */
 updateMetadata();
@@ -26,7 +33,7 @@ renderHero();
 if (sections.couple) renderCouple();
 if (sections.schedule) renderSchedule();
 if (sections.venue) renderVenue();
-if (sections.gallery) renderGallery(); 
+if (sections.gallery) renderGallery();
 if (sections.footer) renderFooter();
 
 if (sections.countdown) initCountdown();
