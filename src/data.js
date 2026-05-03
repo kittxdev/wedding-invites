@@ -10,6 +10,7 @@ export const WEDDING = {
     venue: true,         // Venue information
     gallery: false,      // Photo gallery
     rsvp: false,        // RSVP form (CSS ready, render not implemented)
+    musicPlayer: false,  // Background music player
     footer: true,        // Footer (cannot be disabled)
   },
 

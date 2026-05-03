@@ -43,14 +43,12 @@ if (sections.countdown) initCountdown();
 /* ── cursor ── */
 initCursor();
 
-/* ── cursor ── */
-initCursor();
-
 /* ── music player ── */
-initMusic();
-
-/* ── show music player ── */
-document.getElementById('musicPlayer').classList.add('show');
+if (sections.musicPlayer) {
+  initMusic();
+  const musicPlayer = document.getElementById('musicPlayer');
+  if (musicPlayer) musicPlayer.classList.add('show');
+}
 
 /* ── nav scroll style ── */
 let ticking = false;
