@@ -179,7 +179,7 @@ export function renderCouple() {
 
 /* ── SCHEDULE ── */
 export function renderSchedule() {
-  text('schedSub', `${WD.dateDisplay} · ${WD.venue.name}`);
+  text('schedSub', `${WD.dateDisplay} · Marriage & Reception`);
 
   const scroll = $('scheduleScroll');
   scroll.innerHTML = W.schedule.map(e => `
@@ -200,31 +200,51 @@ export function renderSchedule() {
   });
 }
 
-/* ── VENUE ── */
 export function renderVenue() {
-  const v = WD.venue;
-  const details = [
-    ['🏛️', 'Venue', v.name],
-    ['📍', 'Address', `${v.address}, ${v.city}`],
-    ['📅', 'Date & Time', `${WD.dateDisplay} · ${WD.timeDisplay}`],
-    // ['👗', 'Dress Code', WD.dressCode],
-  ];
-  const mapUrl = `https://maps.google.com/maps?q=${encodeURIComponent(v.name + ', ' + v.city)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
-  html('venueGrid', `
-    <div class="venue-visual reveal-left">
-      <iframe class="venue-map-iframe" src="${mapUrl}" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <div class="reveal-right">
-      <h3 class="venue-name-big">${v.name}</h3>
-      ${details.map(([icon, label, val]) => `
-        <div class="venue-detail-row">
-          <div class="venue-icon">${icon}</div>
-          <div>
-            <p class="venue-detail-label">${label}</p>
-            <p class="venue-detail-val">${val}</p>
+  function renderSingleVenue(v, titlePrefix, timeDisplay, side) {
+    const details = [
+      ['🏛️', 'Venue', v.name],
+      ['📍', 'Address', `${v.address}, ${v.city}`],
+      ['📅', 'Date & Time', `${WD.dateDisplay} · ${timeDisplay}`],
+    ];
+    // Use custom mapUrl from data if available, otherwise fallback to name search
+    const mapUrl = v.mapUrl || `https://maps.google.com/maps?q=${encodeURIComponent(v.name + ', ' + v.city)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+
+    return `
+      <div class="venue-item-container reveal-${side}">
+        <div class="venue-header-box">
+           <span class="venue-tag">${titlePrefix}</span>
+           <h3 class="venue-name-big">${v.name}</h3>
+        </div>
+        <div class="venue-card-grid">
+          <div class="venue-visual-wrap">
+            <div class="venue-visual">
+              <iframe class="venue-map-iframe" src="${mapUrl}" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <a href="${v.directLink || '#'}" target="_blank" class="venue-directions-btn">
+              <span>📍 Get Directions to ${titlePrefix}</span>
+            </a>
           </div>
-        </div>`).join('')}
-    </div>`);
+          <div class="venue-details-box">
+            ${details.map(([icon, label, val]) => `
+              <div class="venue-detail-row">
+                <div class="venue-icon">${icon}</div>
+                <div>
+                  <p class="venue-detail-label">${label}</p>
+                  <p class="venue-detail-val">${val}</p>
+                </div>
+              </div>`).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  html('venueGrid', `
+    ${renderSingleVenue(WD.venue, 'Marriage Hall', WD.timeDisplay, 'left')}
+    <div class="venue-mid-divider"></div>
+    ${renderSingleVenue(WD.receptionVenue, 'Reception Hall', '6:30 PM Onwards', 'right')}
+  `);
 }
 
 

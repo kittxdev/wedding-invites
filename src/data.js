@@ -40,6 +40,16 @@ export const WEDDING = {
       address: 'Abishekapatti',
       city: 'Tirunelveli',
       mapLabel: 'Aysha Mahal · Tirunelveli',
+      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.2435720421417!2d77.63896097533518!3d8.763139191287943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0416d81c4b1b81%3A0x21d1e58efb760e96!2sAysha%20Mahal%20tirunelveli!5e0!3m2!1sen!2sin!4v1777788393548!5m2!1sen!2sin',
+      directLink: 'https://maps.app.goo.gl/GoxBGBUYdW97Ea7Y8'
+    },
+    receptionVenue: {
+      name: 'Joseph Hall',
+      address: 'Mathar Sangam Road, East Ramanputhoor',
+      city: 'Nagercoil',
+      mapLabel: 'Joseph Hall · Nagercoil',
+      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.2917974821257!2d77.42286705708257!3d8.173330111715979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b04f11e290e019f%3A0x7b70c1b031193a88!2sSt%20Joseph&#39;s%20Hall%20(A%2FC)!5e0!3m2!1sen!2sin!4v1777788310157!5m2!1sen!2sin',
+      directLink: 'https://maps.app.goo.gl/Qxo2nQysmRgJmcDH9'
     },
     hashtag: '#PadmaWedsVivitha',
     dressCode: 'Traditional Elegance',
